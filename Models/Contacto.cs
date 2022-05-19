@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Inkasign.Models
 {
-    [Table("t_contacto")]
+   [Table("t_contacto")]
     public class Contacto
     {
 
@@ -17,17 +17,17 @@ namespace Inkasign.Models
 
 
        public int Id { get; set;}
-       [Column("Nombre")]
-       public string Nombre { get; set;}
+       [Column("name")]
+       public string Name { get; set;}
 
-       [Column("Correo")]
-       public string Correo { get; set;}
-       [Column("Asunto")]
+       [Column("email")]
+       public string Email { get; set;}
+       [Column("subject")]
        
-       public string Asunto { get; set;}
-       [Column("Comentario")]
+       public string Subject { get; set;}
+       [Column("comment")]
        
-       public string Comentario { get; set;}
+       public string Comment { get; set;}
        
        
     }
