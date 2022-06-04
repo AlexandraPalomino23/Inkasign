@@ -1,6 +1,6 @@
-using Inkasign.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Inkasign.Data;
 using Npgsql.EntityFrameworkCore.PostgreSQL;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,20 +11,10 @@ var connectionString = builder.Configuration.GetConnectionString("PostgressConne
     options.UseNpgsql(connectionString));
     builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
-
-builder.Services.AddDistributedMemoryCache();
-
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromSeconds(10);
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-});
 
 var app = builder.Build();
 

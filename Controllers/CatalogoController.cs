@@ -21,21 +21,21 @@ namespace Inkasign.Controllers
             _userManager = userManager;
         }
 
-        public async Task<IActionResult> Index(string producto)
+        
+        public async Task<IActionResult> Index(string? searchString)
         {
+            
+            var productos = from o in _context.DataProductos select o;
+          
 
-            IQueryable<Producto> productos;
-
-            if(producto == null){
-                productos = from o in _context.DataProductos select o;
-            }else{
-                producto = producto.ToUpper();
-                productos = _context.DataProductos.Where(p => p.Name.Contains(producto));
+            if(!String.IsNullOrEmpty(searchString)){
+                productos = productos.Where(s => s.Name.Contains(searchString)); 
+                
             }
-
             
             return View(await productos.ToListAsync());
         }
+
 
         public async Task<IActionResult> Detalles(int? id)
         {
