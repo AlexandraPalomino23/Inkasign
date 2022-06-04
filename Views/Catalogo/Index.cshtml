@@ -3,16 +3,18 @@
     ViewData["Title"] = "Catalogo Inkasign Outlet";  
 }
 
+       
+<h1>@ViewData["Title"]</h1>
+
+<br>
 <form asp-controller="Catalogo" asp-action="Index">
        <p>
-         Nombre: <input type="text" name="searchString">
-         <input type="submit" value="Filter" />
-
-
+         <input type="text" name="searchString">
+         <input type="submit" class="btn btn-dark" value="Buscar" />
        </p>
 
-</form >       
-<h1>@ViewData["Title"]</h1>
+</form >
+<br>
   <div class="container" >
     <h1>@ViewData["Message"]</h1>
     <div class="row">
@@ -30,12 +32,12 @@
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">@Html.DisplayFor(modelItem => item.Name)</h5>
-                  <p class="card-text">@Html.DisplayFor(modelItem => item.Precio)</p>
+                  <p class="card-text">S/. @Html.DisplayFor(modelItem => item.Precio)</p>
 
 
-                  <a class="btn btn-primary" asp-action="Agregar" asp-route-id="@item.Id">Agregar</a>
+                  <center><a class="btn btn-primary" asp-action="Agregar" asp-route-id="@item.Id">Agregar</a>
 
-                  <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Visualizar</a>
+                  <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Visualizar</a></center>
                 </div>
               </div>
             </div>

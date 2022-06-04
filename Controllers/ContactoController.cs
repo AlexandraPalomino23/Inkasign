@@ -26,9 +26,11 @@ namespace Inkasign.Controllers
             return View();
         }
 
+       
         [HttpPost]
         public IActionResult Contacto(Contacto contacto)
         {
+            
             _context.Add(contacto);
             _context.SaveChanges();
             return View("Confirmacion");
@@ -48,6 +50,6 @@ namespace Inkasign.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(ListaContacto));
         }
-
+        
     }
 }
