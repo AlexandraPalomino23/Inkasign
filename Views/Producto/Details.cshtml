@@ -1,18 +1,15 @@
 @model Inkasign.Models.Producto
 
 @{
-    ViewData["Title"] = "DETALLE PRODUCTO";
+    ViewData["Title"] = "Details";
 }
-<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <section id="hero4" class="d-flex align-items-center justify-content-center" style="height: 18px;">
-<h1>DETALLE DEL PRODUCTO</h1>
 
-    </section>
+<h1>Details</h1>
 
 <div>
-
+    <h4>Producto</h4>
     <hr />
-    <center><dl class="row" style="font-size: 18px;">
+    <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
@@ -29,7 +26,7 @@
             @Html.DisplayNameFor(model => model.Precio)
         </dt>
         <dd class = "col-sm-10">
-            S/. @Html.DisplayFor(model => model.Precio)
+            @Html.DisplayFor(model => model.Precio)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ImageName)
@@ -37,13 +34,15 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ImageName)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
     </dl>
-</div></center>
-<br>
-<center><div>
-    <a asp-action="EditarProducto" asp-route-id="@Model.Id" class="btn btn-primary" style="font-size: 20px;">EDITAR</a>
-    </div></center>
-    <br>
-  <div>
-    <a asp-action="ListarProducto" class="btn btn-info" style="font-size: 15px;">LISTA DE PRODUCTOS</a>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
 </div>
