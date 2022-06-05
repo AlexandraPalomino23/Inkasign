@@ -12,13 +12,13 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+            Nombre del Producto
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descripcion)
+            Descripción del Producto
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Descripcion)
@@ -30,22 +30,28 @@
             @Html.DisplayFor(model => model.Precio)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageName)
+            Imagen del Producto
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageName)
+            
+            <img class="img-responsive" width="250" height="300"
+                       src="/images/@Html.DisplayFor(model => model.ImageName)" alt="@Html.DisplayFor(model => model.ImageName)"  />
+
+            
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Status)
+            Estado del Producto
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Status)
         </dd>
     </dl>
     
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" />
+        <input type="submit" value="Eliminar Producto" class="btn btn-danger" />
+        <br>
         <br>
         <a asp-action="Index">Volver a la Lista de Productos</a>
        
