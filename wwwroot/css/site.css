@@ -17,6 +17,9 @@ body {
   margin-bottom: 60px;
   background-color: MintCream;
 }
+.bodyLIn{
+background-color: red;
+}
 
 .general_home{
   background: MintCream;
@@ -33,10 +36,11 @@ body {
 }
 
 #content{
-  float: left;
+  
+  position: 100% absolute center;
   line-height: 200%;
   height: 100%;
-  width: 100%;
+  width: 700px;
   background: Seashell;
   margin: 0px;
   border: 3px solid;
@@ -53,3 +57,4 @@ body {
   color: white;
   box-shadow: 7px 13px 37px #000;
 }
+

@@ -4,7 +4,10 @@
 @{
     ViewData["Title"] = "Iniciar Sesión";
 }
-
+<head>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="bodyLIn">
 <div class="create mt-5">
         <form id="account" method="post">
             
@@ -46,9 +49,6 @@
             </fieldset>
         </form>
 </div>
-
-
-
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 
@@ -66,3 +66,7 @@
     }
 
 </script>
+</body>
+
+
+
