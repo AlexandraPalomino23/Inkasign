@@ -40,7 +40,7 @@ background-color: red;
 
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:400);
-form{
+#formulario{
   padding: 60px;
   max-width: 400px;
   background-color: #E7E7E7;
@@ -48,7 +48,7 @@ form{
 }
 
 
-form input, form textarea{
+#formulario input, #formulario textarea{
   margin-bottom: 15px;
   font-family: "Roboto", sans-serif;
   width: 100%;
@@ -62,14 +62,24 @@ form input, form textarea{
 
 textarea {  resize: none;}
 
-.form-inline{
-  
-  text-align: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left:5px;
-  padding-right:5px;
-
- 
+.formulario{
+  padding: 60px;
+  max-width: 400px;
+  background-color: #E7E7E7;
+  margin: 0 auto;
 }
+
+
+.formulario input, .formulario textarea{
+  margin-bottom: 15px;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box; 
+  border: none; 
+  color: #525c66; 
+  font-size: 1em;
+  resize: none; 
+}
+
 
