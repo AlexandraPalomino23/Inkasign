@@ -1,17 +1,22 @@
 @model IEnumerable<Inkasign.Models.Producto>
 @{
-    ViewData["Title"] = "Catalogo Inkasign Outlet";  
+    ViewData["Title"] = "Catálogo Inkasign Outlet";  
 }
 
-       
-<h1>@ViewData["Title"]</h1>
+     
+<center><h1>@ViewData["Title"]</h1></center>
 
 <br>
+<br>
+<br>
+<form asp-controller="Catalogo" asp-action="Index" class="container123">
        <p>
-         <input type="text" name="searchString">
-         <input type="submit" class="btn btn-dark" value="Buscar" />
-       </p>
+         <input type="text" name="searchString" class="input">
+         <input type="image" src="/images/lupa.png" id="btn123"/>
 
+       </p>
+</form> 
+<br>
 <br>
   <div class="container" >
     <h1>@ViewData["Message"]</h1>
