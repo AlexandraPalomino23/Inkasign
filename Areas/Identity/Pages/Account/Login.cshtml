@@ -9,11 +9,8 @@
 </head>
 <body class="bodyLIn">
 <div class="create mt-5">
-<<<<<<< HEAD
-        <form class="loginF" id="account" method="post">
-=======
-        <form id="account" method="post" class="formulario">
->>>>>>> 5d90ee90550de56f24ba6f466695ccf0a053dc57
+
+        <form id="formulario" method="post" class="">
             
             <fieldset>
 
@@ -21,15 +18,15 @@
 
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="col-12 mb-3">
-                <label class="form-label" asp-for="Input.Email">Correo electrónico</label>
-                <input asp-for="Input.Email" class="form-control tamaño" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                <label class="form-label" asp-for="Input.Email" >Correo electrónico</label>
+                <input asp-for="Input.Email" class="form-control tamaño" placeholder="Ingresa tu email" />
+                <span asp-validation-for="Input.Email" class="text-danger" ></span>
             </div>
             <div class="col-12 mb-3">
                 <label class="form-label" asp-for="Input.Password">Contraseña</label>
-                <input asp-for="Input.Password" class="form-control tamaño" id="password"/>
+                <input asp-for="Input.Password" class="form-control tamaño" id="password" placeholder="Ingresa tu contraseña"/>
                 
-                <input type="checkbox" class="CBox" onclick="mostrar()" value="Mostrar Contraseña">  Mostrar contraseña                
+                <input type="checkbox" onclick="mostrar()" value="Mostrar Contraseña"> Mostrar contraseña                
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             
 
