@@ -35,16 +35,7 @@ background-color: red;
   float: right;
 }
 
-#content{
-  
-  position: 100% absolute center;
-  line-height: 200%;
-  height: 100%;
-  width: 700px;
-  background: Seashell;
-  margin: 0px;
-  border: 3px solid;
-}
+
 
 
 
@@ -56,7 +47,7 @@ form{
   margin: 0 auto;
 }
 
-<<<<<<< HEAD
+
 form input, form textarea{
   margin-bottom: 15px;
   font-family: "Roboto", sans-serif;
@@ -70,5 +61,5 @@ form input, form textarea{
 }
 
 textarea {  resize: none;}
-=======
->>>>>>> 59fbae9b1136ccab389ea61cd8507dc0fabea49d
+
+
