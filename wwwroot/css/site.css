@@ -189,4 +189,9 @@ textarea {  resize: none;}
 
 
 
-
+.pago{
+  padding: 60px;
+  max-width: 400px;
+  background-color: #E7E7E7;
+  margin: 0 auto;
+}
