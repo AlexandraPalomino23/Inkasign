@@ -65,7 +65,10 @@
                        <br>
 <div class="grupo ccv">
     <label for="inputCCV">CVV</label>
-    <input class="form-control" type="text" asp-for="Cvv" maxlength="3">
+    <input id= "password" type="password" type="text" asp-for="Cvv" maxlength="3">
+<br>
+<input type="checkbox" onclick="mostrar()" value="Mostrar Contraseña"> Mostrar CVV
+
 </div>      
 <br>               
 <div class="grupo">
@@ -99,7 +102,23 @@
           } , 3000)
       })
        
+function mostrar(){
 
+         var tipo = document.getElementById("password");
+
+
+
+         if(tipo.type == 'password'){
+
+            tipo.type = 'text';
+
+         }else{
+
+            tipo.type = 'password';
+
+         }
+
+    }
 
     </script>
 
