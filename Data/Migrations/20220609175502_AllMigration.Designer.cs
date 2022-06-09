@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Inkasign.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220518045737_CatalogoMigration")]
-    partial class CatalogoMigration
+    [Migration("20220609175502_AllMigration")]
+    partial class AllMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -58,6 +58,36 @@ namespace Inkasign.Data.Migrations
                     b.ToTable("t_contacto");
                 });
 
+            modelBuilder.Entity("Inkasign.Models.DetallePedido", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Cantidad")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("PedidoId")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Precio")
+                        .HasColumnType("numeric");
+
+                    b.Property<int>("ProductoId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PedidoId");
+
+                    b.HasIndex("ProductoId");
+
+                    b.ToTable("t_detalle_pedido");
+                });
+
             modelBuilder.Entity("Inkasign.Models.Pago", b =>
                 {
                     b.Property<int>("Id")
@@ -84,6 +114,36 @@ namespace Inkasign.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("t_pago");
+                });
+
+            modelBuilder.Entity("Inkasign.Models.Pedido", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("PagoId")
+                        .HasColumnType("integer");
+
+                    b.Property<decimal>("Total")
+                        .HasColumnType("numeric");
+
+                    b.Property<string>("UserID")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<byte[]>("archivo")
+                        .IsRequired()
+                        .HasColumnType("bytea");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PagoId");
+
+                    b.ToTable("t_pedido");
                 });
 
             modelBuilder.Entity("Inkasign.Models.Producto", b =>
@@ -133,7 +193,7 @@ namespace Inkasign.Data.Migrations
                     b.Property<decimal>("Precio")
                         .HasColumnType("numeric");
 
-                    b.Property<int>("ProductoId")
+                    b.Property<int?>("ProductoId")
                         .HasColumnType("integer");
 
                     b.Property<string>("Status")
@@ -149,6 +209,50 @@ namespace Inkasign.Data.Migrations
                     b.HasIndex("ProductoId");
 
                     b.ToTable("t_proforma");
+                });
+
+            modelBuilder.Entity("Inkasign.Models.Trabajador", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Apellidos")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Apellidos");
+
+                    b.Property<string>("Celular")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Celular");
+
+                    b.Property<string>("Correo")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Correo");
+
+                    b.Property<string>("Nacimiento")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Nacimiento");
+
+                    b.Property<string>("Nombres")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Nombres");
+
+                    b.Property<string>("Rol")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Rol");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("t_trabajador");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -351,13 +455,41 @@ namespace Inkasign.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Inkasign.Models.Proforma", b =>
+            modelBuilder.Entity("Inkasign.Models.DetallePedido", b =>
                 {
+                    b.HasOne("Inkasign.Models.Pedido", "Pedido")
+                        .WithMany()
+                        .HasForeignKey("PedidoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Inkasign.Models.Producto", "Producto")
                         .WithMany()
                         .HasForeignKey("ProductoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Pedido");
+
+                    b.Navigation("Producto");
+                });
+
+            modelBuilder.Entity("Inkasign.Models.Pedido", b =>
+                {
+                    b.HasOne("Inkasign.Models.Pago", "Pago")
+                        .WithMany()
+                        .HasForeignKey("PagoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Pago");
+                });
+
+            modelBuilder.Entity("Inkasign.Models.Proforma", b =>
+                {
+                    b.HasOne("Inkasign.Models.Producto", "Producto")
+                        .WithMany()
+                        .HasForeignKey("ProductoId");
 
                     b.Navigation("Producto");
                 });

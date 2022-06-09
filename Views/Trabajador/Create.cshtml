@@ -1,0 +1,62 @@
+@model Inkasign.Models.Trabajador
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Registrar Nuevos Trabajadores</h1>
+
+<h4>Como administrador, tengo acceso a registrar nuevos trabajadores de la empresa Inkasign Outlet</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nombres" class="control-label"> Nombres del Trabajador</label>
+                <input asp-for="Nombres" class="form-control" />
+                <span asp-validation-for="Nombres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellidos" class="control-label">Apellidos del Trabajador</label>
+                <input asp-for="Apellidos" class="form-control" />
+                <span asp-validation-for="Apellidos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Correo" class="control-label">Correo del Trabajador</label>
+                <input asp-for="Correo" class="form-control" />
+                <span asp-validation-for="Correo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Celular" class="control-label">Celular del Trabajador</label>
+                <input asp-for="Celular" class="form-control" />
+                <span asp-validation-for="Celular" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Nacimiento" class="control-label">Nacimiento</label>
+                <input asp-for="Nacimiento" class="form-control" />
+                <span asp-validation-for="Nacimiento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Rol" class="control-label">Rol del Trabajador</label>
+                <input asp-for="Rol" class="form-control" />
+                <span asp-validation-for="Rol" class="text-danger"></span>
+            </div>
+
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Registrar Trabajador" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<div>
+    <a asp-action="Index">Volver a la Lista de Productos</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,72 @@
+@model IEnumerable<Inkasign.Models.Trabajador>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<center><h1>Lista de Trabajadores</h1></center>
+
+<p>
+    <a asp-action="Create">Registrar Nuevos Trabajadores</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th> Nombres del Trabajador
+                
+            </th>
+            <th>
+                Apellidos del Trabajador
+            </th>
+            <th>
+                Correo Electrónico
+            </th>
+            <th>
+                Celular del Trabajador
+                
+            </th>
+            <th>
+               Nacimiento
+            </th>
+            <th>
+                Rol del Trabajador
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.Celular)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Nacimiento)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Rol)
+            </td>
+
+
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

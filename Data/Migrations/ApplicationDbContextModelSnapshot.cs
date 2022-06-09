@@ -191,7 +191,7 @@ namespace Inkasign.Data.Migrations
                     b.Property<decimal>("Precio")
                         .HasColumnType("numeric");
 
-                    b.Property<int>("ProductoId")
+                    b.Property<int?>("ProductoId")
                         .HasColumnType("integer");
 
                     b.Property<string>("Status")
@@ -207,6 +207,50 @@ namespace Inkasign.Data.Migrations
                     b.HasIndex("ProductoId");
 
                     b.ToTable("t_proforma");
+                });
+
+            modelBuilder.Entity("Inkasign.Models.Trabajador", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Apellidos")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Apellidos");
+
+                    b.Property<string>("Celular")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Celular");
+
+                    b.Property<string>("Correo")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Correo");
+
+                    b.Property<string>("Nacimiento")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Nacimiento");
+
+                    b.Property<string>("Nombres")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Nombres");
+
+                    b.Property<string>("Rol")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Rol");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("t_trabajador");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -443,9 +487,7 @@ namespace Inkasign.Data.Migrations
                 {
                     b.HasOne("Inkasign.Models.Producto", "Producto")
                         .WithMany()
-                        .HasForeignKey("ProductoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProductoId");
 
                     b.Navigation("Producto");
                 });
