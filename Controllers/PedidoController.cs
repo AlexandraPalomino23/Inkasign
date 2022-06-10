@@ -82,6 +82,7 @@ namespace Inkasign.Controllers
             
             model.pedido = pedido;
             model.detalle = detalle;
+             
 
             return View(model);
         }

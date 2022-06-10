@@ -44,21 +44,18 @@
 @foreach (DetallePedido item in Model.detalle) {
         <tr>
 
-                @if(item.Producto == null){
-                    <td class="text-danger">
-                        (PRODUCTO ELIMINADO)
-                    </td>
-                }else{
+               
                     <td> 
                         @item.Producto.Name
                     </td>
-                }
+                
 
             <td>
-                @item.Cantidad
+                @item.Cantidad 
             </td>
             <td>
-                S/. @item.Precio
+              
+              
 
             </td>
             <td>
@@ -66,12 +63,16 @@
             </td>
         
         </tr>
-}
 
+}
         <tr>
             <th colspan="3">Total:</td>
             <td>S/. @pedido.Total</td>
+            
         </tr>
+
+
+       
 
     </tbody>
 </table> 
