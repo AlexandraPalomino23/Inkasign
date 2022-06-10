@@ -118,7 +118,7 @@ namespace Inkasign.Controllers
  
     <div class=""container mt-10"">
        <div class=""flex-header"">
-        <img src=""~/images/logo.jpg"" alt="">
+        <img src=""~/images/logo.jpg"" alt="" width=""15%"">
         <div class=""texto"">
           <p> <span clas=""fw-bold"">N° Boleta: </span> 9484848484</p>
           <p><span clas=""fw-bold"">Direccion: </span> Calle Camino Real 1801 Surco</p>
