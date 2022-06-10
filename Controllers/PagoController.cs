@@ -118,11 +118,11 @@ namespace Inkasign.Controllers
  
     <div class=""container mt-10"">
        <div class=""flex-header"">
-        <img src=""~/imag/logo.jpg"" alt="""">
+        <img src=""~/images/logo.jpg"" alt="">
         <div class=""texto"">
           <p> <span clas=""fw-bold"">N° Boleta: </span> 9484848484</p>
-          <p><span clas=""fw-bold"">Direccion: </span> Jr Ocaña 349</p>
-          <p><span clas=""fw-bold"">Ruc: </span> 39393939</p>
+          <p><span clas=""fw-bold"">Direccion: </span> Calle Camino Real 1801 Surco</p>
+          <p><span clas=""fw-bold"">Ruc: </span> 20603301871</p>
         </div>
     </div>
      <div class=""card mb-5"">
@@ -131,7 +131,7 @@ namespace Inkasign.Controllers
             </div>
             <div class=""card-body"">
               <h5 class=""card-title"">Gracias por Confiar en nosotros</h5>
-              <p class=""card-text"">Cualquier consulta contactarnos al: 983878398</p>
+              <p class=""card-text"">Cualquier consulta contactarnos al: +511 652 1010 - 989 302 342</p>
             </div>
           </div>
     <table class=""table table-striped"">
