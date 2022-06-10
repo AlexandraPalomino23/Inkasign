@@ -118,7 +118,7 @@ namespace Inkasign.Controllers
  
     <div class=""container mt-10"">
        <div class=""flex-header"">
-        <img src=""~/img/logo.png"" alt="""">
+        <img src=""~/imag/logo.jpg"" alt="""">
         <div class=""texto"">
           <p> <span clas=""fw-bold"">N° Boleta: </span> 9484848484</p>
           <p><span clas=""fw-bold"">Direccion: </span> Jr Ocaña 349</p>
